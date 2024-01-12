@@ -3,7 +3,11 @@ This module takes care of starting the API Server, Loading the DB and Adding the
 """
 from flask import Flask, request, redirect, jsonify, url_for, Blueprint
 from api.models import db, User
-from api.utils import generate_sitemap, APIException, get_hash, hash_password, verify_password
+from api.utils import generate_sitemap, APIException
+from api.utils import get_hash
+from api.utils import hash_password
+from api.utils import verify_password
+
 from flask_cors import CORS
 from flask_jwt_extended import create_access_token, jwt_required, get_jwt_identity, unset_jwt_cookies
 
@@ -29,7 +33,7 @@ def signup():
 
 
 @api.route("/login", methods=["POST"])
-def signup():
+def login():
     
     email = request.json.get("email", None)
     password = request.json.get("password", None) 
@@ -53,6 +57,13 @@ def handle_get_hash():
     return get_hash (to_hash)
 
 #missing private
+@api.route("/private", methods=["GET"])
+@jwt_required()
+def private_route():
+
+    current_user = get_jwt_identity()
+    return jsonify (message= f"Hello {current_user}, this is your private route")
+
 
 @api.route("/logout", methods=["POST"])
 def logout ():

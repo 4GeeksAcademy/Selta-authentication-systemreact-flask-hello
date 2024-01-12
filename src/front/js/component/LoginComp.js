@@ -1,9 +1,7 @@
 import React, { useContext, useState } from "react";
-import { Context } from "../store/appContext";
-import rigoImageUrl from "../../img/rigo-baby.jpg";
 import "../../styles/forms.css";
 
-export const LoginPage = () => {
+const LoginComp = () => {
 	const { email, setEmail } = useState('');
 	const { password, setPassword } = useState('');
     
@@ -46,3 +44,4 @@ export const LoginPage = () => {
     </form>
   );
 };
+export default LoginComp;

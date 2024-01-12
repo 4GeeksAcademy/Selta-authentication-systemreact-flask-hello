@@ -1,12 +1,13 @@
 import React from 'react';
-import LoginForm from '../component/LoginForm.js';
-import '../../styles/authForms.css';
+import LoginComp from '../component/LoginComp';
+import '../../styles/forms.css';
+
 
 const Login = () => {
   return (
     <div className="form-container">
       <div className="page-title">Login</div>
-      <LoginForm />
+      <LoginComp />
     </div>
   );
 };

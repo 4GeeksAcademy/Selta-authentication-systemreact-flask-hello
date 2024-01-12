@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import "../../styles/forms.css";
 
-export const SignUp = () => {
+const SignUpComp = () => {
     const { email, setEmail } = useState('');
 	const { password, setPassword } = useState('');
 
@@ -40,3 +40,4 @@ return (
   );
 };
 
+export default SignUpComp;

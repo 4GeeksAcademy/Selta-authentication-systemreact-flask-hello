@@ -1,12 +1,12 @@
 import React from 'react';
-import Private from '../component/Private.js';
-import '../../styles/authForms.css';
+import PrivateComp from '../component/PrivateComp.js';
+import '../../styles/forms.css';
 
 const Private = () => {
   return (
     <div className="form-container">
       <div className="page-title">Private page</div>
-      <Private />
+      <PrivateComp />
     </div>
   );
 };
