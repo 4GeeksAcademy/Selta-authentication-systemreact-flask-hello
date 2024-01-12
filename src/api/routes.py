@@ -59,7 +59,7 @@ def logout ():
     current_user = get_jwt_identity()
 
     @jwt_required()
-    def exec_logout()
+    def exec_logout():
         response = jsonify ({"message": "Logout successfull"})
         unset_jwt_cookies(response)
         return response, 200
